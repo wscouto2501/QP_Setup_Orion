@@ -1,6 +1,6 @@
 {
   "createdAt": "2025-02-07T01:25:28.896Z",
-  "updatedAt": "2025-08-08T01:10:48.740Z",
+  "updatedAt": "2025-08-27T17:03:44.131Z",
   "id": "1004",
   "name": "ChatwootProfileUpdate",
   "active": false,
@@ -14,10 +14,10 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 1,
       "position": [
-        432,
-        -144
+        1936,
+        752
       ],
-      "id": "3a3b243a-0c36-4e09-a537-10dbf2e4fa09"
+      "id": "51d0f736-6f0c-43e5-a91b-7b2a97425754"
     },
     {
       "parameters": {
@@ -36,10 +36,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        224,
-        -80
+        1728,
+        816
       ],
-      "id": "4154595b-68b1-4ee9-9016-eea0254110f1"
+      "id": "4af7bacc-27f9-4e61-a3da-6bd49f0a523d"
     },
     {
       "parameters": {
@@ -52,13 +52,13 @@
           ]
         }
       },
-      "id": "0091ccf7-2a56-4782-ac00-d31932d2791e",
+      "id": "06208ebe-05b6-43d4-b735-b67db02f6645",
       "name": "Success on get picture ?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -16,
-        -64
+        1488,
+        832
       ]
     },
     {
@@ -92,10 +92,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        688,
-        -144
+        2192,
+        752
       ],
-      "id": "930b0f7c-f500-462b-8646-7608f9a25a10",
+      "id": "a8aebf64-6dbd-40b0-9848-156e45fa4b23",
       "retryOnFail": true,
       "notes": "Missing filter by:\nContact Id\nInbox Id\nStatus = open | pending"
     },
@@ -110,26 +110,26 @@
           ]
         }
       },
-      "id": "bb4002a5-bdd3-40b6-b0cd-7e3bef51399a",
+      "id": "a14c9fae-789b-4df4-8592-6e299840eda1",
       "name": "If Found ChatId",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -944,
-        -416
+        560,
+        480
       ]
     },
     {
       "parameters": {
         "errorMessage": "Chat Id not found !"
       },
-      "id": "bbdb3493-c664-4f98-a9de-1aa8afd47f2f",
+      "id": "cad91a10-b569-4447-a514-f10747a6b68c",
       "name": "Stop And Error",
       "type": "n8n-nodes-base.stopAndError",
       "typeVersion": 1,
       "position": [
-        -736,
-        -224
+        768,
+        672
       ]
     },
     {
@@ -138,13 +138,13 @@
         "height": 309.0215131709718,
         "width": 527.0811654526535
       },
-      "id": "652b8fc3-1649-45a1-8763-7a0895b4c799",
+      "id": "785fa669-1279-41ba-b974-79be0e4fe14c",
       "name": "Note",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -2256,
-        -800
+        -768,
+        96
       ]
     },
     {
@@ -174,33 +174,33 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        64,
-        -656
+        1568,
+        240
       ],
-      "id": "cbc90db4-0d08-4a7c-a1a0-3d1f88c9b2c2",
+      "id": "e1ad4e63-b4a7-4217-86d3-3bc475166476",
       "retryOnFail": false,
       "continueOnFail": true
     },
     {
       "parameters": {},
-      "id": "ecc11dde-1ef8-4d8d-b7de-0d81a5851fb8",
+      "id": "a3de7c78-7f5b-4cea-9350-79e06178c7f5",
       "name": "When Called By Another Workflow",
       "type": "n8n-nodes-base.executeWorkflowTrigger",
       "typeVersion": 1,
       "position": [
-        -2048,
-        -416
+        -592,
+        480
       ]
     },
     {
       "parameters": {},
-      "id": "e3496963-8daa-4098-b947-38b1d807fea7",
+      "id": "32d01f3f-139f-4181-8e66-a6010a144c70",
       "name": "NoOp1",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        -416,
-        -160
+        1088,
+        736
       ]
     },
     {
@@ -208,13 +208,13 @@
         "respondWith": "noData",
         "options": {}
       },
-      "id": "10c8dbf1-a973-40a0-b227-150eab751f44",
+      "id": "d7cb8770-a8cf-405d-bf08-74b8293d3c13",
       "name": "Respond to Webhook",
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1,
       "position": [
-        1200,
-        -320
+        2704,
+        576
       ]
     },
     {
@@ -229,13 +229,13 @@
         },
         "combineOperation": "any"
       },
-      "id": "815b09f9-f346-4ed6-a448-4d58cf1b2bab",
+      "id": "1a8f53ca-4a72-46de-9c21-bc164b4272de",
       "name": "If Empty Identifier",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -416,
-        -640
+        1088,
+        256
       ]
     },
     {
@@ -250,13 +250,13 @@
           ]
         }
       },
-      "id": "64fcded6-5e37-49ac-b43b-5fafbd45c97d",
+      "id": "a14b7213-f2ea-43a0-b309-ac61b910858f",
       "name": "If Different Identifier ?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -176,
-        -544
+        1328,
+        352
       ],
       "notesInFlow": true,
       "notes": "Used to sincronize old versions with Quepasa Id"
@@ -267,13 +267,13 @@
         "combinationMode": "multiplex",
         "options": {}
       },
-      "id": "aef879bd-d035-49e1-adc4-938da3273cc5",
+      "id": "c1995ba5-c022-4b26-9049-c6a6cf066f58",
       "name": "Merge1",
       "type": "n8n-nodes-base.merge",
       "typeVersion": 2,
       "position": [
-        -1648,
-        -400
+        -160,
+        496
       ]
     },
     {
@@ -294,10 +294,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        -224,
-        -64
+        1280,
+        832
       ],
-      "id": "dbb97023-2a8a-4d39-8888-badf86c77c72",
+      "id": "69906f9e-a27e-4cef-b155-efa16fd7d6e1",
       "continueOnFail": true,
       "notes": "Important to use \"source_id\" to respond messages"
     },
@@ -307,28 +307,28 @@
         "height": 161.4940393151249,
         "width": 505.65878958512553
       },
-      "id": "f785ae9e-3d29-46ca-8367-eb46bf8071a4",
+      "id": "68b76d29-739e-4298-9cfe-84486768c4e2",
       "name": "Sticky Note2",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -2256,
-        -976
+        -768,
+        -80
       ]
     },
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "=SELECT account_id as account, identifier FROM contacts WHERE id = '{{ $json.contactid }}'",
+        "query": "=SELECT account_id as account, identifier, phone_number FROM contacts WHERE id = '{{ $json.contactid }}'",
         "options": {}
       },
-      "id": "28309d71-70af-496e-9e27-65811075d26b",
+      "id": "98f92b27-075c-42d3-9de3-773edfcd0624",
       "name": "Get Contact Info",
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.3,
       "position": [
-        -1840,
-        -320
+        -352,
+        576
       ],
       "credentials": {
         "postgres": {
@@ -336,6 +336,145 @@
           "name": "DB-Chatwoot"
         }
       }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "757f5d66-a95b-482b-8786-e3aa2ddb28df",
+              "leftValue": "={{ $json.phone_number.length <= 14 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1072,
+        0
+      ],
+      "id": "af155198-cd0a-492e-a011-098c03a44aec",
+      "name": "Verify Phone = Lid"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.qphost }}/getphone",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "lid",
+              "value": "={{ $json.identifier }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "X-QUEPASA-TOKEN",
+              "value": "={{ $json.qptoken }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1328,
+        -16
+      ],
+      "id": "b02920ff-e458-41c4-b7d1-16e205853293",
+      "name": "Verificar-Phone",
+      "alwaysOutputData": true,
+      "retryOnFail": false,
+      "waitBetweenTries": 3000,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "99593350-93a1-46fe-ad5c-a202dfe55b6d",
+              "leftValue": "={{ $json.phone }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1552,
+        -16
+      ],
+      "id": "64746239-0ce3-41b9-98e5-b6fcbb862063",
+      "name": "Existe?"
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "={{ $('When Called By Another Workflow').item.json.cwhost }}/api/v1/accounts/{{ $('When Called By Another Workflow').item.json.account }}/contacts/{{ $('When Called By Another Workflow').item.json.contactid }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "api_access_token",
+              "value": "={{ $('When Called By Another Workflow').item.json.utoken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"phone_number\": \"+{{ $json.phone }}\" \n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1792,
+        -16
+      ],
+      "id": "ffa7a33f-d8e3-4e05-b62d-66666fb07e88",
+      "name": "Update-Contact"
     }
   ],
   "connections": {
@@ -372,16 +511,32 @@
         ]
       ]
     },
+    "Chatwoot Update Profile Avatar URL": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "If Found ChatId": {
       "main": [
         [
           {
-            "node": "NoOp1",
+            "node": "If Empty Identifier",
             "type": "main",
             "index": 0
           },
           {
-            "node": "If Empty Identifier",
+            "node": "Verify Phone = Lid",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "NoOp1",
             "type": "main",
             "index": 0
           }
@@ -389,6 +544,17 @@
         [
           {
             "node": "Stop And Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chatwoot Update Profile Email3": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
             "type": "main",
             "index": 0
           }
@@ -421,28 +587,6 @@
           },
           {
             "node": "Quepasa Picture Info",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Chatwoot Update Profile Email3": {
-      "main": [
-        [
-          {
-            "node": "Respond to Webhook",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Chatwoot Update Profile Avatar URL": {
-      "main": [
-        [
-          {
-            "node": "Respond to Webhook",
             "type": "main",
             "index": 0
           }
@@ -510,6 +654,39 @@
           }
         ]
       ]
+    },
+    "Verify Phone = Lid": {
+      "main": [
+        [
+          {
+            "node": "Verificar-Phone",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar-Phone": {
+      "main": [
+        [
+          {
+            "node": "Existe?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Existe?": {
+      "main": [
+        [
+          {
+            "node": "Update-Contact",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "settings": {
@@ -524,20 +701,38 @@
     "instanceId": "2b4ab318d4f8eba20155e50db9998481bc305e3588e42ee69176091736c9d07e"
   },
   "pinData": {},
-  "versionId": "a1bb60e4-79fc-4837-b0c6-db7fbca1e135",
+  "versionId": "3a5d40f3-2b3f-480f-8a31-68786dca3ac6",
   "triggerCount": 0,
   "tags": [
-    {
-      "createdAt": "2025-08-08T00:44:31.388Z",
-      "updatedAt": "2025-08-08T00:44:31.388Z",
-      "id": "95HKVBfihMx9eAvs",
-      "name": "apiqp-cw"
-    },
     {
       "createdAt": "2023-05-19T22:54:38.266Z",
       "updatedAt": "2023-05-19T22:54:38.266Z",
       "id": "13",
       "name": "github.com/nocodeleaks"
+    },
+    {
+      "createdAt": "2025-08-08T00:44:31.388Z",
+      "updatedAt": "2025-08-08T00:44:31.388Z",
+      "id": "95HKVBfihMx9eAvs",
+      "name": "apiqp-cw"
+    }
+  ],
+  "shared": [
+    {
+      "createdAt": "2025-02-13T23:21:36.882Z",
+      "updatedAt": "2025-02-13T23:21:36.882Z",
+      "role": "workflow:owner",
+      "workflowId": "1004",
+      "projectId": "PvCSBKqKIFxr5IEy",
+      "project": {
+        "createdAt": "2024-11-06T23:37:48.901Z",
+        "updatedAt": "2024-11-06T23:38:36.706Z",
+        "id": "PvCSBKqKIFxr5IEy",
+        "name": "Deivid Santos <deivid.amsantos@gmail.com>",
+        "type": "personal",
+        "icon": null,
+        "description": null
+      }
     }
   ],
   "versao-qp": "latest",
@@ -546,16 +741,16 @@
   "Tag-Comparar": "apiqp-cw",
   "Workflow-Tags": [
     {
-      "createdAt": "2025-08-08T00:44:31.388Z",
-      "updatedAt": "2025-08-08T00:44:31.388Z",
-      "id": "95HKVBfihMx9eAvs",
-      "name": "apiqp-cw"
-    },
-    {
       "createdAt": "2023-05-19T22:54:38.266Z",
       "updatedAt": "2023-05-19T22:54:38.266Z",
       "id": "13",
       "name": "github.com/nocodeleaks"
+    },
+    {
+      "createdAt": "2025-08-08T00:44:31.388Z",
+      "updatedAt": "2025-08-08T00:44:31.388Z",
+      "id": "95HKVBfihMx9eAvs",
+      "name": "apiqp-cw"
     }
   ]
 }
