@@ -1,6 +1,6 @@
 {
   "createdAt": "2025-02-07T01:25:28.896Z",
-  "updatedAt": "2025-08-08T01:06:16.475Z",
+  "updatedAt": "2025-08-27T17:05:51.748Z",
   "id": "1009",
   "name": "QuepasaToChatwoot",
   "active": true,
@@ -358,7 +358,7 @@
           "string": [
             {
               "name": "inreply_internal_id",
-              "value": "={{ $json.inreply.split(/-/).pop() }}"
+              "value": "={{ $json.inreply.split('-')[$json.inreply.split('-').length - 2] }}"
             }
           ]
         },
@@ -1426,247 +1426,6 @@
     },
     {
       "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "59d83f23-51c5-4522-8288-4ee8e684d817",
-              "leftValue": "={{ $json.payload[0].identifier }}",
-              "rightValue": "@lid",
-              "operator": {
-                "type": "string",
-                "operation": "exists",
-                "singleValue": true
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        2912,
-        560
-      ],
-      "id": "499dde38-08ac-44d6-9e40-ba863efa75c4",
-      "name": "Contato-Existe?"
-    },
-    {
-      "parameters": {
-        "baseUrl": "={{ $('EXTRA').item.json.cwhost }}",
-        "accessToken": "={{ $('EXTRA').item.json.utoken }}",
-        "resource": "contact",
-        "accountId": "={{ $('EXTRA').item.json.account }}",
-        "operation": "contactSearch",
-        "contactSearchQuery": "={{ $('PAYLOAD').item.json.body.chat.phone }}"
-      },
-      "type": "n8n-nodes-chatwoot.chatwoot",
-      "typeVersion": 1,
-      "position": [
-        2720,
-        560
-      ],
-      "id": "86070157-532e-4e2b-a8f7-11ce6f017103",
-      "name": "Buscar-Contato-CW"
-    },
-    {
-      "parameters": {
-        "baseUrl": "={{ $('EXTRA').item.json.cwhost }}",
-        "accessToken": "={{ $('EXTRA').item.json.utoken }}",
-        "resource": "contact",
-        "accountId": "={{ $('EXTRA').item.json.account }}",
-        "operation": "contactSearch",
-        "contactSearchQuery": "={{ $('PAYLOAD').item.json.body.chat.lid }}"
-      },
-      "type": "n8n-nodes-chatwoot.chatwoot",
-      "typeVersion": 1,
-      "position": [
-        3120,
-        720
-      ],
-      "id": "9e7b0e9e-00d1-4aa5-a627-18f6635edcf3",
-      "name": "Buscar-Contato-Lid-CW"
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "95220a96-d1ca-465d-8957-31fbed798f1f",
-              "leftValue": "={{ $json.payload[0].identifier }}",
-              "rightValue": "",
-              "operator": {
-                "type": "string",
-                "operation": "exists",
-                "singleValue": true
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        3328,
-        720
-      ],
-      "id": "ec8bfe32-72fe-4049-9486-4f7249a0a934",
-      "name": "Existe-Contato"
-    },
-    {
-      "parameters": {
-        "baseUrl": "={{ $('EXTRA').item.json.cwhost }}",
-        "accessToken": "={{ $('EXTRA').item.json.utoken }}",
-        "resource": "contact",
-        "accountId": "={{ $('PAYLOAD').item.json.body.extra.account }}",
-        "operation": "contactUpdate",
-        "contactId": "={{ $json.payload[0].id }}",
-        "contactIdentifier": "={{ $('PAYLOAD').item.json.body.chat.lid }}",
-        "name": "={{ $('PAYLOAD').item.json.body.chat.title }}",
-        "inboxId": "={{ $('PAYLOAD').item.json.body.extra.inbox }}",
-        "phoneNumber": "={{ $('PAYLOAD').item.json.body.chat.phone }}"
-      },
-      "type": "n8n-nodes-chatwoot.chatwoot",
-      "typeVersion": 1,
-      "position": [
-        3520,
-        608
-      ],
-      "id": "6935a2a9-f077-4fc0-9f0e-2e6c2ea913b9",
-      "name": "Atualizando-Contato-Numero"
-    },
-    {
-      "parameters": {},
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        3792,
-        528
-      ],
-      "id": "8ba8956b-e473-41a7-9b17-31b1f809ed62",
-      "name": "No Operation, do nothing4"
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "c5e12526-5a60-407c-b8ef-701fc91262f4",
-              "leftValue": "={{ $json.payload[0].identifier }}",
-              "rightValue": "@lid",
-              "operator": {
-                "type": "string",
-                "operation": "notContains"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        3104,
-        400
-      ],
-      "id": "1d87c575-0704-4d06-bf9f-8d1e79682001",
-      "name": "Lid-Vazio?"
-    },
-    {
-      "parameters": {
-        "baseUrl": "={{ $('EXTRA').item.json.cwhost }}",
-        "accessToken": "={{ $('EXTRA').item.json.utoken }}",
-        "resource": "contact",
-        "accountId": "={{ $('PAYLOAD').item.json.body.extra.account }}",
-        "operation": "contactUpdate",
-        "contactId": "={{ $json.payload[0].id }}",
-        "contactIdentifier": "={{ $('PAYLOAD').item.json.body.chat.lid }}",
-        "name": "={{ $('PAYLOAD').item.json.body.chat.title }}",
-        "inboxId": "={{ $('PAYLOAD').item.json.body.extra.inbox }}",
-        "phoneNumber": "={{ $('PAYLOAD').item.json.body.chat.phone }}"
-      },
-      "type": "n8n-nodes-chatwoot.chatwoot",
-      "typeVersion": 1,
-      "position": [
-        3360,
-        400
-      ],
-      "id": "cb6928be-1f40-4fe5-9b7c-4bbeef231279",
-      "name": "Atualizando-Contato-Lid"
-    },
-    {
-      "parameters": {
-        "content": "## Update Contato Edit",
-        "height": 512,
-        "width": 1728
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        2464,
-        368
-      ],
-      "typeVersion": 1,
-      "id": "a567b146-4aa3-48fc-ae3f-02d1d6497a90",
-      "name": "Sticky Note3"
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "0b0bd2fd-c37b-4a30-be3f-9e0898d1bfb2",
-              "leftValue": "={{ $('PAYLOAD').item.json.body.chat.lid }}",
-              "rightValue": "",
-              "operator": {
-                "type": "string",
-                "operation": "exists",
-                "singleValue": true
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        2512,
-        576
-      ],
-      "id": "7164b340-e5b1-4bac-95fc-ba7414aa18de",
-      "name": "Existe-Lid?"
-    },
-    {
-      "parameters": {
         "respondWith": "noData",
         "options": {
           "responseCode": 200
@@ -1677,8 +1436,8 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1,
       "position": [
-        4000,
-        528
+        1760,
+        1568
       ]
     }
   ],
@@ -1997,7 +1756,7 @@
       "main": [
         [
           {
-            "node": "Existe-Lid?",
+            "node": "Edited Contact",
             "type": "main",
             "index": 0
           }
@@ -2268,127 +2027,6 @@
           }
         ]
       ]
-    },
-    "Contato-Existe?": {
-      "main": [
-        [
-          {
-            "node": "Lid-Vazio?",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Buscar-Contato-Lid-CW",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Buscar-Contato-CW": {
-      "main": [
-        [
-          {
-            "node": "Contato-Existe?",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Existe-Contato": {
-      "main": [
-        [
-          {
-            "node": "Atualizando-Contato-Numero",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "No Operation, do nothing4",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Atualizando-Contato-Numero": {
-      "main": [
-        [
-          {
-            "node": "No Operation, do nothing4",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Buscar-Contato-Lid-CW": {
-      "main": [
-        [
-          {
-            "node": "Existe-Contato",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Lid-Vazio?": {
-      "main": [
-        [
-          {
-            "node": "Atualizando-Contato-Lid",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "No Operation, do nothing4",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Atualizando-Contato-Lid": {
-      "main": [
-        [
-          {
-            "node": "No Operation, do nothing4",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "No Operation, do nothing4": {
-      "main": [
-        [
-          {
-            "node": "Edited Contact",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Existe-Lid?": {
-      "main": [
-        [
-          {
-            "node": "Buscar-Contato-CW",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        []
-      ]
     }
   },
   "settings": {
@@ -2402,21 +2040,89 @@
     "templateCredsSetupCompleted": true,
     "instanceId": "2b4ab318d4f8eba20155e50db9998481bc305e3588e42ee69176091736c9d07e"
   },
-  "pinData": {},
-  "versionId": "7356902d-eed0-4bd3-a876-94541cbc90e5",
+  "pinData": {
+    "Webhook Chatwoot": [
+      {
+        "json": {
+          "headers": {
+            "host": "webhook.developermaster.com.br",
+            "user-agent": "Quepasa",
+            "content-length": "599",
+            "accept-encoding": "gzip",
+            "content-type": "application/json",
+            "x-forwarded-for": "172.18.0.1",
+            "x-forwarded-host": "webhook.developermaster.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "7e6f2ded0799",
+            "x-quepasa-wid": "556137702634:40@s.whatsapp.net",
+            "x-real-ip": "172.18.0.1"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "id": "3EB07C8AF9203BA5C68C06",
+            "timestamp": "2025-08-27T12:56:57.509641587-03:00",
+            "type": "text",
+            "chat": {
+              "id": "556193743824@s.whatsapp.net",
+              "phone": "+556193743824",
+              "title": "Deivid Martins",
+              "lid": "262212115554500@lid"
+            },
+            "text": "Respondendo img enviada, acredito ser o id 565",
+            "fromme": false,
+            "frominternal": false,
+            "inreply": "1-2-565-A0",
+            "wid": "556137702634:40@s.whatsapp.net",
+            "extra": {
+              "account": 1,
+              "atoken": "39eb1c28883751209cfca14",
+              "identifier": "aEHMgs1fRUTesGbtmp3rpFHs",
+              "inbox": 2,
+              "qphost": "https://apiqp2.developermaster.com.br",
+              "qptoken": "aEHMgs1fRUTesGbtmp3rpFHs",
+              "utoken": "sau7xmybfiJto8RivjGk3UvH"
+            }
+          },
+          "webhookUrl": "https://webhook.developermaster.com.br/webhook/to-chatwoot",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "versionId": "ffc881c2-339e-45b3-9baf-f1b9db788dda",
   "triggerCount": 1,
   "tags": [
-    {
-      "createdAt": "2023-05-19T22:54:38.266Z",
-      "updatedAt": "2023-05-19T22:54:38.266Z",
-      "id": "13",
-      "name": "github.com/nocodeleaks"
-    },
     {
       "createdAt": "2025-08-08T00:44:31.388Z",
       "updatedAt": "2025-08-08T00:44:31.388Z",
       "id": "95HKVBfihMx9eAvs",
       "name": "apiqp-cw"
+    },
+    {
+      "createdAt": "2023-05-19T22:54:38.266Z",
+      "updatedAt": "2023-05-19T22:54:38.266Z",
+      "id": "13",
+      "name": "github.com/nocodeleaks"
+    }
+  ],
+  "shared": [
+    {
+      "createdAt": "2025-02-13T23:21:36.882Z",
+      "updatedAt": "2025-02-13T23:21:36.882Z",
+      "role": "workflow:owner",
+      "workflowId": "1009",
+      "projectId": "PvCSBKqKIFxr5IEy",
+      "project": {
+        "createdAt": "2024-11-06T23:37:48.901Z",
+        "updatedAt": "2024-11-06T23:38:36.706Z",
+        "id": "PvCSBKqKIFxr5IEy",
+        "name": "Deivid Santos <deivid.amsantos@gmail.com>",
+        "type": "personal",
+        "icon": null,
+        "description": null
+      }
     }
   ],
   "versao-qp": "latest",
@@ -2425,16 +2131,16 @@
   "Tag-Comparar": "apiqp-cw",
   "Workflow-Tags": [
     {
-      "createdAt": "2023-05-19T22:54:38.266Z",
-      "updatedAt": "2023-05-19T22:54:38.266Z",
-      "id": "13",
-      "name": "github.com/nocodeleaks"
-    },
-    {
       "createdAt": "2025-08-08T00:44:31.388Z",
       "updatedAt": "2025-08-08T00:44:31.388Z",
       "id": "95HKVBfihMx9eAvs",
       "name": "apiqp-cw"
+    },
+    {
+      "createdAt": "2023-05-19T22:54:38.266Z",
+      "updatedAt": "2023-05-19T22:54:38.266Z",
+      "id": "13",
+      "name": "github.com/nocodeleaks"
     }
   ]
 }
