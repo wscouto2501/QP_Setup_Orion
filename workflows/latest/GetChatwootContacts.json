@@ -1,6 +1,6 @@
 {
   "createdAt": "2025-02-07T01:25:28.896Z",
-  "updatedAt": "2025-08-19T01:08:35.403Z",
+  "updatedAt": "2025-08-08T01:28:52.281Z",
   "id": "1002",
   "name": "GetChatwootContacts",
   "active": false,
@@ -952,8 +952,7 @@
         768
       ],
       "id": "e70edd88-b243-4221-a073-2731499afb1b",
-      "name": "Contact update",
-      "onError": "continueRegularOutput"
+      "name": "Contact update"
     },
     {
       "parameters": {
@@ -971,8 +970,7 @@
         768
       ],
       "id": "f266655e-06a0-47fd-9212-906baeed4ca3",
-      "name": "Contact search",
-      "onError": "continueRegularOutput"
+      "name": "Contact search"
     }
   ],
   "connections": {
@@ -1426,20 +1424,38 @@
     "instanceId": "2b4ab318d4f8eba20155e50db9998481bc305e3588e42ee69176091736c9d07e"
   },
   "pinData": {},
-  "versionId": "4df19020-1e18-4b1c-ac01-c92cd19e0281",
+  "versionId": "8818a1aa-f714-4b1e-96cf-747e0e27dac4",
   "triggerCount": 0,
   "tags": [
-    {
-      "createdAt": "2023-05-19T22:54:38.266Z",
-      "updatedAt": "2023-05-19T22:54:38.266Z",
-      "id": "13",
-      "name": "github.com/nocodeleaks"
-    },
     {
       "createdAt": "2025-08-08T00:44:31.388Z",
       "updatedAt": "2025-08-08T00:44:31.388Z",
       "id": "95HKVBfihMx9eAvs",
       "name": "apiqp-cw"
+    },
+    {
+      "createdAt": "2023-05-19T22:54:38.266Z",
+      "updatedAt": "2023-05-19T22:54:38.266Z",
+      "id": "13",
+      "name": "github.com/nocodeleaks"
+    }
+  ],
+  "shared": [
+    {
+      "createdAt": "2025-02-13T23:21:36.882Z",
+      "updatedAt": "2025-02-13T23:21:36.882Z",
+      "role": "workflow:owner",
+      "workflowId": "1002",
+      "projectId": "PvCSBKqKIFxr5IEy",
+      "project": {
+        "createdAt": "2024-11-06T23:37:48.901Z",
+        "updatedAt": "2024-11-06T23:38:36.706Z",
+        "id": "PvCSBKqKIFxr5IEy",
+        "name": "Deivid Santos <deivid.amsantos@gmail.com>",
+        "type": "personal",
+        "icon": null,
+        "description": null
+      }
     }
   ],
   "versao-qp": "latest",
@@ -1448,16 +1464,16 @@
   "Tag-Comparar": "apiqp-cw",
   "Workflow-Tags": [
     {
-      "createdAt": "2023-05-19T22:54:38.266Z",
-      "updatedAt": "2023-05-19T22:54:38.266Z",
-      "id": "13",
-      "name": "github.com/nocodeleaks"
-    },
-    {
       "createdAt": "2025-08-08T00:44:31.388Z",
       "updatedAt": "2025-08-08T00:44:31.388Z",
       "id": "95HKVBfihMx9eAvs",
       "name": "apiqp-cw"
+    },
+    {
+      "createdAt": "2023-05-19T22:54:38.266Z",
+      "updatedAt": "2023-05-19T22:54:38.266Z",
+      "id": "13",
+      "name": "github.com/nocodeleaks"
     }
   ]
 }
